@@ -24,8 +24,11 @@ const createCard = (data) => {
   data.results.forEach((item) => {
     const clone = templateCard.cloneNode(true);
     clone.querySelector("h3").textContent = item.name;
+    clone.querySelector("p").textContent = item.species;
+    clone.querySelector("img").setAttribute("src", item.image);
     fragment.appendChild(clone);
   });
+  cards.appendChild(fragment);
 };
 
 const loadingData = (state) => {
